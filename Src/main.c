@@ -56,6 +56,8 @@ static void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN 0 */
 
+
+
 /* USER CODE END 0 */
 
 int main(void)
@@ -78,6 +80,14 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
   uart_init();
+  i2c_init();
+
+	//ACCEL
+  i2c_write(ADXL_WRITE, DATA_FORMAT_REG, RANGE_2G);
+  i2c_write(ADXL_WRITE, POWER_CTL, MEASURE_MODE);
+
+
+  TIM3_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -85,7 +95,7 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-	  //transmitBuf("adsdadad");
+
   /* USER CODE BEGIN 3 */
 
   }

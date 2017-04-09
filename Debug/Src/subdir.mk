@@ -4,21 +4,27 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Src/i2c.c \
 ../Src/main.c \
 ../Src/stm32f4xx_hal_msp.c \
 ../Src/stm32f4xx_it.c \
+../Src/timer.c \
 ../Src/uart.c 
 
 OBJS += \
+./Src/i2c.o \
 ./Src/main.o \
 ./Src/stm32f4xx_hal_msp.o \
 ./Src/stm32f4xx_it.o \
+./Src/timer.o \
 ./Src/uart.o 
 
 C_DEPS += \
+./Src/i2c.d \
 ./Src/main.d \
 ./Src/stm32f4xx_hal_msp.d \
 ./Src/stm32f4xx_it.d \
+./Src/timer.d \
 ./Src/uart.d 
 
 

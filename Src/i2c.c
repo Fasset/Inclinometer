@@ -26,9 +26,9 @@ void i2c_write(uint8_t ICadres, uint8_t adres, uint8_t data) {
 	temp = I2C1->SR2; //zerowanie flagi poprzez odczyt
 	I2C1->DR = adres; //wyslanie adresu rejestru docelowego urzadzenia
 	while (!(I2C1->SR1 & I2C_SR1_BTF)); //oczekiwanie na potwierdzenie wyslania 1 bajtu 
-  I2C1->DR = data; //wyslanie danych 
-  while (!(I2C1->SR1 & I2C_SR1_BTF));
-  I2C1->CR1 |= I2C_CR1_STOP; //stop
+	I2C1->DR = data; //wyslanie danych
+	while (!(I2C1->SR1 & I2C_SR1_BTF));
+	I2C1->CR1 |= I2C_CR1_STOP; //stop
 }
 
 
